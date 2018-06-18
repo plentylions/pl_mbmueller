@@ -28,6 +28,22 @@ class MBMuellerServiceProvider extends ServiceProvider
 
     public function boot(Twig $twig, Dispatcher $dispatcher, ConfigRepository $config)
     {
+
+        $dispatcher->listen('IO.init.templates', function (Partial $partial)
+        {
+            pluginApp(Container::class)->register('Ceres::PageDesign.Partials.Header.NavigationList.twig', NavigationCacheSettings::class);
+            pluginApp(Container::class)->register('Ceres::PageDesign.Partials.Header.SideNavigation.twig', SideNavigationCacheSettings::class);
+
+            $partial->set('head', 'Ceres::PageDesign.Partials.Head');
+            $partial->set('header', 'Ceres::PageDesign.Partials.Header.Header');
+            $partial->set('page-design', 'Ceres::PageDesign.PageDesign');
+            $partial->set('footer', 'Ceres::PageDesign.Partials.Footer');
+
+            $partial->set('page-design', 'MBMueller::PageDesign.PageDesign');
+
+            return false;
+        }, self::PRIORITY);
+
         $dispatcher->listen('IO.tpl.category.item', function (TemplateContainer $container)
         {
             $container->setTemplate('MBMueller::Category.Item.CategoryItem');

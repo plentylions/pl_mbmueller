@@ -88,7 +88,7 @@
             <div class="thumb-meta">
                 {{ LayoutContainer.show("Ceres::CategoryItem.BeforePrices", item.data) }}
 
-                {{ services.customer.getContact().classId }}
+                {% if isCustomerB2B %}
                 <div class="prices">
                     {% if item.data.prices.rrp is defined and item.data.prices.rrp.price.value != 0 %}
                         <div class="price-view-port">
@@ -102,6 +102,7 @@
                         {{ item.data.prices.default.unitPrice.formatted }} *
                     </div>
                 </div>
+                {% endif %}
 
                 {{ LayoutContainer.show("Ceres::CategoryItem.AfterPrices", item.data) }}
 
