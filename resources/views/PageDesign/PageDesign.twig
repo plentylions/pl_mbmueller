@@ -7,7 +7,7 @@
 {{ component( "Ceres::Customer.Components.Registration" ) }}
 {{ component( "Ceres::Basket.Components.AddItemToBasketOverlay" ) }}
 {{ component( "Ceres::PageDesign.Components.Popper" ) }}
-{{ component( "Ceres::Containers.Components.ContainerItemList" ) }}
+{{ component( "MBMueller::Containers.Components.ContainerItemList" ) }}
 
 {% set currencyFormat = config("Ceres.currency.format") %}
 {% set isCustomerB2B = (services.customer.getContact().classId == config("Ceres.global.default_contact_class_b2b")) %}
