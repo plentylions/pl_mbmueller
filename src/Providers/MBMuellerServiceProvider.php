@@ -39,6 +39,7 @@ class MBMuellerServiceProvider extends ServiceProvider
             $partial->set('page-design', 'Ceres::PageDesign.PageDesign');
             $partial->set('footer', 'Ceres::PageDesign.Partials.Footer');
 
+            $partial->set('header', 'MBMueller::PageDesign.Partials.Header.Header');
             $partial->set('page-design', 'MBMueller::PageDesign.PageDesign');
 
             return false;
