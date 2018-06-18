@@ -49,6 +49,12 @@ class MBMuellerServiceProvider extends ServiceProvider
             $container->setTemplate('MBMueller::Category.Item.CategoryItem');
             return false;
         }, self::PRIORITY);
+
+        $dispatcher->listen('IO.tpl.search', function (TemplateContainer $container)
+        {
+            $container->setTemplate('MBMueller::ItemList.ItemListView');
+            return false;
+        }, self::PRIORITY);
     }
 }
 
