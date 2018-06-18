@@ -28,7 +28,11 @@ class MBMuellerServiceProvider extends ServiceProvider
 
     public function boot(Twig $twig, Dispatcher $dispatcher, ConfigRepository $config)
     {
-
+        $dispatcher->listen('IO.tpl.category.item', function (TemplateContainer $container)
+        {
+            $container->setTemplate('MBMueller::Category.Item.CategoryItem');
+            return false;
+        }, self::PRIORITY);
     }
 }
 
