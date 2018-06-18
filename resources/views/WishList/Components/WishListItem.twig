@@ -1,4 +1,5 @@
 {{ component( "Ceres::Item.Components.QuantityInput" ) }}
+{% set isCustomerB2B = (services.customer.getContact().classId == config("Ceres.global.default_contact_class_b2b")) %}
 <transition-group name="wish-list-item-transition" tag="div">
     <article v-for="(wishListItem, index) in wishListItems" :key="wishListItem.id" class="wish-list-item" :id="'article_' + index ">
 

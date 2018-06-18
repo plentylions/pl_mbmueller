@@ -14,6 +14,8 @@
 {% set currencyFormat = config("Ceres.currency.format") %}
 {% set currencyFormatSelect = config("Ceres.currency.format_selection") %}
 
+{% set isCustomerB2B = (services.customer.getContact().classId == config("Ceres.global.default_contact_class_b2b")) %}
+
 <header class="top-bar">
         <div>
             <div class="container-max">

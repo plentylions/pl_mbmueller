@@ -4,6 +4,7 @@
 
 {% set lang = services.sessionStorage.getLang() %}
 {% set shippingCat = config("Ceres.global.shippingCostsCategoryId") %}
+{% set isCustomerB2B = (services.customer.getContact().classId == config("Ceres.global.default_contact_class_b2b")) %}
 
 {% if enableCarousel is not defined %}
     {% if config("Ceres.item.enable_image_carousel") == "true" %}

@@ -9,6 +9,8 @@
     {% set enableCarousel = ceresConfig.item.enableImageCarousel %}
 {% endif %}
 
+{% set isCustomerB2B = (services.customer.getContact().classId == config("Ceres.global.default_contact_class_b2b")) %}
+
 <article class="cmp cmp-product-thumb cmp-product-thumb--grid">
     <div class="thumb-inner">
         {% if isCustomerB2B %}
