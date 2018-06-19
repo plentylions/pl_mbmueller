@@ -41,6 +41,7 @@ class MBMuellerServiceProvider extends ServiceProvider
 
             $partial->set('header', 'MBMueller::PageDesign.Partials.Header.Header');
             $partial->set('page-design', 'MBMueller::PageDesign.PageDesign');
+            $partial->set('footer', 'MBMueller::PageDesign.Partials.Footer');
 
             return false;
         }, self::PRIORITY);
