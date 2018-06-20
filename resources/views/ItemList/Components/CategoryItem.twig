@@ -76,6 +76,8 @@
                             * {{ trans("Ceres::Template.itemInclVAT") }} {{ trans("Ceres::Template.itemExclusive") }}
                     <a {% if shippingCat is not empty %} data-toggle="modal" href="#shippingscosts"{% endif %} title="{{ trans("Ceres::Template.itemShippingCosts") }}">{{ trans("Ceres::Template.itemShippingCosts") }}</a>
                 </span>
+                {% else %}
+                    <div class="no-price">Preise sind erst nach Anmeldung und Freischaltung sichtbar.</div>
                 {% endif %}
             </div>
             <!-- ./ITEM DETAILS  -->

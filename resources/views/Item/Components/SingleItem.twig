@@ -84,6 +84,8 @@
                             </span>
                         </div>
                     </div>
+                    {% else %}
+                        <div class="no-price">Preise sind erst nach Anmeldung und Freischaltung sichtbar.</div>
                     {% endif %}
 
                     <slot name="AfterPrice"></slot>

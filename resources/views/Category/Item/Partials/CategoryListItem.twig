@@ -106,6 +106,8 @@
                         {{ item.data.prices.default.unitPrice.formatted }} *
                     </div>
                 </div>
+                {% else %}
+                <div class="no-price">Preise sind erst nach Anmeldung und Freischaltung sichtbar.</div>
                 {% endif %}
 
                 {{ LayoutContainer.show("Ceres::CategoryItem.AfterPrices", item.data) }}
